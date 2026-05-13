@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+  transition: 0.4s;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+}
+
+/* DARK MODE */
+.dark {
+  background: #121212;
+  color: white;
+}
+
+/* HEADER */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 10px;
+}
+
+/* STICKY INPUT BAR */
+.input-section {
+  position: sticky;
+  top: 0;
+  background: inherit;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  z-index: 1000;
+}
+
+/* INPUTS */
+input, select, button {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.9rem;
+}
+
+button {
+  background: #333;
+  color: white;
+}
+
+/* STATS */
+#stats {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* CONTAINER */
+.container {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+/* COLUMNS */
+.column {
+  flex: 1;
+  background: white;
+  padding: 10px;
+  border-radius: 12px;
+  min-height: 250px;
+  transition: 0.3s;
+}
+
+.dark .column {
+  background: #1e1e1e;
+}
+
+/* TASK ITEM */
+li {
+  margin: 8px 0;
+  padding: 10px;
+  background: #eee;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  cursor: grab;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.dark li {
+  background: #333;
+}
+
+/* DELETE BUTTON */
+li button {
+  float: right;
+  background: red;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(8px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input, select, button {
+    width: 100%;
+  }
+
+  .column {
+    width: 100%;
+  }
+
+  li {
+    font-size: 0.85rem;
+  }
+}
+
+/* 📱 EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  #stats {
+    font-size: 0.8rem;
+  }
+}
+
+li:active {
+  transform: scale(0.98);
+}
+
+input[type="time"] {
+  min-width: 120px;
+}
